@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 import Home from './screens/Home';
 import AppLoading from 'expo-app-loading';
+import About from './screens/About';
+import ReviewDetails from './screens/ReviewDetails';
 
 const getFonts = () =>
   Font.loadAsync({
