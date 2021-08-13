@@ -2123,6 +2123,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-navigation/elements@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@react-navigation/elements@npm:1.0.4"
+  peerDependencies:
+    "@react-navigation/native": ^6.0.0
+    react: "*"
+    react-native: "*"
+    react-native-safe-area-context: ">= 3.0.0"
+  checksum: 0ae8f5e0ded6b52051b73bfc8fd1d41b5500efd0bdc04d87dd4c47bb487c39b7e2126846aa56cf4ad0624013c4c628b12ac171fa92c1bb31d9cfceb7df393fd6
+  languageName: node
+  linkType: hard
+
 "@react-navigation/native@npm:^3.8.4":
   version: 3.8.4
   resolution: "@react-navigation/native@npm:3.8.4"
@@ -2153,6 +2165,24 @@ __metadata:
   dependencies:
     nanoid: ^3.1.23
   checksum: c16a1df07839b884e9bbe46c5a5bdc62fc9b24c4b4a64500bbc842b4e34523f543317d95d172c974b63f595816fccc2cb93b16ca7df13c0fa3810fe547c83e14
+  languageName: node
+  linkType: hard
+
+"@react-navigation/stack@npm:^6.0.6":
+  version: 6.0.6
+  resolution: "@react-navigation/stack@npm:6.0.6"
+  dependencies:
+    "@react-navigation/elements": ^1.0.4
+    color: ^3.1.3
+    warn-once: ^0.1.0
+  peerDependencies:
+    "@react-navigation/native": ^6.0.0
+    react: "*"
+    react-native: "*"
+    react-native-gesture-handler: ">= 1.0.0"
+    react-native-safe-area-context: ">= 3.0.0"
+    react-native-screens: ">= 3.0.0"
+  checksum: 5347e198d26cda8a304f157f16261303d97c1f15a2e0e495f0464dabd36b9e7067bff89372860463097fab97903d497d3153e0e4587daefaa1dad4ba37ffe19e
   languageName: node
   linkType: hard
 
@@ -3165,7 +3195,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-convert@npm:^1.9.0":
+"color-convert@npm:^1.9.0, color-convert@npm:^1.9.3":
   version: 1.9.3
   resolution: "color-convert@npm:1.9.3"
   dependencies:
@@ -3197,7 +3227,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-string@npm:^1.5.3":
+"color-string@npm:^1.5.3, color-string@npm:^1.6.0":
   version: 1.6.0
   resolution: "color-string@npm:1.6.0"
   dependencies:
@@ -3213,6 +3243,16 @@ __metadata:
   bin:
     color-support: bin.js
   checksum: dce8615cffa693ec56f6b438a1b3f3af1af7ac03a9df129005dfbd5b2c18fe130382378a613afe0f84fe7309f117b68bb552d964c23f76dae244ab6495913c28
+  languageName: node
+  linkType: hard
+
+"color@npm:^3.1.3":
+  version: 3.2.1
+  resolution: "color@npm:3.2.1"
+  dependencies:
+    color-convert: ^1.9.3
+    color-string: ^1.6.0
+  checksum: 2cf9436cba4cf0cd2da88d82aa69cbad548a850ec24abc1a64930778aa4bc6ef2839b178d85fa2bc254b2a5b982e7db1040c05764f6161a1266880bb0dd14d4f
   languageName: node
   linkType: hard
 
@@ -7334,6 +7374,7 @@ fsevents@^1.2.7:
     "@babel/core": ^7.9.0
     "@react-native-community/masked-view": 0.1.10
     "@react-navigation/native": ^6.0.2
+    "@react-navigation/stack": ^6.0.6
     expo: ~42.0.1
     expo-app-loading: ^1.1.2
     expo-status-bar: ~1.0.4
