@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState }from 'react';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import Navigator from './components/routes/AppNavigator'
