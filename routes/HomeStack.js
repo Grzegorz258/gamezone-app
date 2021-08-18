@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home';
 import ReviewDetails from '../screens/ReviewDetails';
+import { Image } from 'react-native';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -11,7 +12,9 @@ const HomeStack = () => (
     <Screen
       name="Details"
       component={ReviewDetails}
-      options={{ headerShown: true }}
+      options={{
+        headerShown: true,
+      }}
     />
   </Navigator>
 );
