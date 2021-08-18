@@ -10,6 +10,7 @@ import {
 import { GlobalStyles } from '../styles/GlobalStyles';
 import Card from '../components/Card/Card';
 import { MaterialIcons } from '@expo/vector-icons';
+import ReviewForm from './ReviewForm';
 
 const Home = ({ navigation }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,7 +45,7 @@ const Home = ({ navigation }) => {
             onPress={() => setIsModalOpen(false)}
             style={{...styles.openModal, ...styles.closeModal}}
             />
-            <Text>Hello from modal</Text>
+            <ReviewForm />
         </View>
       </Modal>
 
