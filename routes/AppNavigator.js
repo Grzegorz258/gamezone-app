@@ -4,25 +4,25 @@ import { NavigationContainer } from '@react-navigation/native';
 import HomeStack from './HomeStack';
 import AboutStack from './AboutStack';
 
-const Drawer = createDrawerNavigator();
+const {Navigator, Screen} = createDrawerNavigator();
 
-const AppNavigator =()=> {
+const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen
+      <Navigator initialRouteName="Home">
+        <Screen
           name="Home"
           component={HomeStack}
           options={{ title: 'GameZone' }}
         />
-        <Drawer.Screen
+        <Screen
           name="About"
           component={AboutStack}
           options={{ title: 'About GameZone' }}
         />
-      </Drawer.Navigator>
+      </Navigator>
     </NavigationContainer>
   );
-}
+};
 
-export default AppNavigator
+export default AppNavigator;

@@ -1,7 +1,8 @@
-import React, { useState }from 'react';
+import React, { useState } from 'react';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import Navigator from './components/routes/AppNavigator'
+import Navigator from './routes/AppNavigator';
+
 
 const getFonts = () =>
   Font.loadAsync({
@@ -12,7 +13,19 @@ const getFonts = () =>
 const App = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
-  return <>{fontsLoaded ? <Navigator /> : <AppLoading startAsync={getFonts} onFinish={() => setFontsLoaded(true)} onError={console.warn}/>}</>;
+  return (
+    <>
+      {fontsLoaded ? (
+        <Navigator />
+      ) : (
+        <AppLoading
+          startAsync={getFonts}
+          onFinish={() => setFontsLoaded(true)}
+          onError={console.warn}
+        />
+      )}
+    </>
+  );
 };
 
 export default App;

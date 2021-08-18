@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import About from '../../screens/About';
+import About from '../screens/About';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -11,10 +11,7 @@ const AboutStack = () => (
       headerShown: false,
     }}
   >
-    <Screen
-      name="About"
-      component={About}
-    />
+    <Screen name="About" component={About} />
   </Navigator>
 );
 
