@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   Modal,
   StyleSheet,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from 'react-native';
 import { GlobalStyles } from '../styles/GlobalStyles';
 import Card from '../components/Card/Card';
@@ -35,18 +37,26 @@ const Home = ({ navigation }) => {
     },
   ]);
 
+  const addReview = (review) => {
+    review.key = Math.random().toString();
+    setReviews((prevState) => [review, ...prevState]);
+    setIsModalOpen(false);
+  };
+
   return (
     <View style={GlobalStyles.container}>
       <Modal visible={isModalOpen} animationType="slide">
-        <View style={styles.modalContent}>
-          <MaterialIcons
-            name="close"
-            size={24}
-            onPress={() => setIsModalOpen(false)}
-            style={{...styles.openModal, ...styles.closeModal}}
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.modalContent}>
+            <MaterialIcons
+              name="close"
+              size={24}
+              onPress={() => setIsModalOpen(false)}
+              style={{ ...styles.openModal, ...styles.closeModal }}
             />
-            <ReviewForm />
-        </View>
+            <ReviewForm addReview={addReview} />
+          </View>
+        </TouchableWithoutFeedback>
       </Modal>
 
       <MaterialIcons
@@ -87,7 +97,7 @@ const styles = StyleSheet.create({
   closeModal: {
     marginTop: 20,
     marginBottom: 0,
-  }
+  },
 });
 
 export default Home;
