@@ -10,7 +10,7 @@ const Card = ({ children }) => {
 
 const styles = StyleSheet.create({
   card: {
-    marginVertical: 10,
+    marginVertical: 5,
     marginHorizontal: 5,
     backgroundColor: '#fff',
     borderRadius: 5,

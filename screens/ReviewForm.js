@@ -35,21 +35,39 @@ const ReviewForm = ({ addReview }) => {
               placeholder="Review title"
               onChangeText={props.handleChange('title')}
               value={props.values.title}
+              onBlur={props.handleBlur('title')}
             />
+            <Text style={GlobalStyles.errorText}>
+              {props.touched.title && props.errors.title
+                ? 'Title must have minimum 4 characters'
+                : null}
+            </Text>
             <TextInput
               style={GlobalStyles.input}
               multiline
               placeholder="Review body"
               onChangeText={props.handleChange('body')}
               value={props.values.body}
+              onBlur={props.handleBlur('body')}
             />
+            <Text style={GlobalStyles.errorText}>
+              {props.touched.body && props.errors.body
+                ? 'Body must have minimum 10 characters'
+                : null}
+            </Text>
             <TextInput
               style={GlobalStyles.input}
               placeholder="Rating (1-5)"
               onChangeText={props.handleChange('rating')}
               value={props.values.rating}
+              onBlur={props.handleBlur('rating')}
               keyboardType="numeric"
             />
+            <Text style={GlobalStyles.errorText}>
+              {props.touched.rating && props.errors.rating
+                ? 'Rating must be a number 1-5'
+                : null}
+            </Text>
             <Button
               title="Submit"
               color="maroon"

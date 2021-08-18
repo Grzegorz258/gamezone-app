@@ -20,5 +20,12 @@ export const GlobalStyles = StyleSheet.create({
     borderColor: '#ddd',
     borderRadius: 6,
     fontSize: 18,
+  },
+  errorText: {
+    marginTop: 5,
+    marginBottom: 10,
+    color: 'crimson',
+    fontWeight: 'bold',
+    textAlign: 'center'
   }
 });
