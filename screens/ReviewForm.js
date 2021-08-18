@@ -45,7 +45,7 @@ const ReviewForm = ({ addReview }) => {
             </Text>
             <TextInput
               style={GlobalStyles.input}
-              multiline
+              multiline minHeight={60}
               placeholder="Review body"
               onChangeText={props.handleChange('body')}
               value={props.values.body}
