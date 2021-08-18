@@ -11,7 +11,7 @@ const AboutStack = () => (
       headerShown: false,
     }}
   >
-    <Screen name="About" component={About} />
+    <Screen name="AboutInStack" component={About} />
   </Navigator>
 );
 

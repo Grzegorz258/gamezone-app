@@ -24,7 +24,7 @@ const AppNavigator = () => {
     <NavigationContainer>
       <Navigator initialRouteName="Home">
         <Screen
-          name="Home"
+          name="HomeInDrawer"
           component={HomeStack}
           options={{
             title: 'GameZone',
@@ -39,7 +39,7 @@ const AppNavigator = () => {
           }}
         />
         <Screen
-          name="About"
+          name="AboutInDrawer"
           component={AboutStack}
           options={{
             title: 'About GameZone',
