@@ -1,6 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, TextInput, Text } from 'react-native';
-import { GlobalStyles } from '../styles/GlobalStyles';
+import { View } from 'react-native';
+import {
+  Container,
+  ErrorText,
+  StyledInput,
+} from '../styles/GlobalStyles';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import Button from '../components/Button/Button';
@@ -20,7 +24,7 @@ const reviewSchema = yup.object({
 
 const ReviewForm = ({ addReview }) => {
   return (
-    <View style={GlobalStyles.container}>
+    <Container>
       <Formik
         initialValues={{ title: '', body: '', rating: '' }}
         validationSchema={reviewSchema}
@@ -29,54 +33,56 @@ const ReviewForm = ({ addReview }) => {
           actions.resetForm();
         }}
       >
-        {(props) => (
+        {({
+          touched,
+          values,
+          errors,
+          handleBlur,
+          handleChange,
+          handleSubmit,
+        }) => (
           <View>
-            <TextInput
-              style={GlobalStyles.input}
+            <StyledInput
               placeholder="Review title"
-              onChangeText={props.handleChange('title')}
-              value={props.values.title}
-              onBlur={props.handleBlur('title')}
+              onChangeText={handleChange('title')}
+              value={values.title}
+              onBlur={handleBlur('title')}
             />
-            <Text style={GlobalStyles.errorText}>
-              {props.touched.title && props.errors.title
+            <ErrorText>
+              {touched.title && errors.title
                 ? 'Title must have minimum 4 characters'
                 : null}
-            </Text>
-            <TextInput
-              style={GlobalStyles.input}
-              multiline minHeight={60}
+            </ErrorText>
+            <StyledInput
+              multiline
+              minHeight={60}
               placeholder="Review body"
-              onChangeText={props.handleChange('body')}
-              value={props.values.body}
-              onBlur={props.handleBlur('body')}
+              onChangeText={handleChange('body')}
+              value={values.body}
+              onBlur={handleBlur('body')}
             />
-            <Text style={GlobalStyles.errorText}>
-              {props.touched.body && props.errors.body
+            <ErrorText>
+              {touched.body && errors.body
                 ? 'Body must have minimum 10 characters'
                 : null}
-            </Text>
-            <TextInput
-              style={GlobalStyles.input}
+            </ErrorText>
+            <StyledInput
               placeholder="Rating (1-5)"
-              onChangeText={props.handleChange('rating')}
-              value={props.values.rating}
-              onBlur={props.handleBlur('rating')}
+              onChangeText={handleChange('rating')}
+              value={values.rating}
+              onBlur={handleBlur('rating')}
               keyboardType="numeric"
             />
-            <Text style={GlobalStyles.errorText}>
-              {props.touched.rating && props.errors.rating
+            <ErrorText>
+              {touched.rating && errors.rating
                 ? 'Rating must be a number 1-5'
                 : null}
-            </Text>
-            <Button
-              text="Submit"
-              onPress={props.handleSubmit}
-            />
+            </ErrorText>
+            <Button text="Submit" onPress={handleSubmit} />
           </View>
         )}
       </Formik>
-    </View>
+    </Container>
   );
 };
 

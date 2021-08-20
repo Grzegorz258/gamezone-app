@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import {
-  View,
   Text,
   FlatList,
   TouchableOpacity,
-  Modal,
-  StyleSheet,
-  TouchableWithoutFeedback,
-  Keyboard,
 } from 'react-native';
-import { GlobalStyles } from '../styles/GlobalStyles';
+import { Container } from '../styles/GlobalStyles';
 import Card from '../components/Card/Card';
-import { MaterialIcons } from '@expo/vector-icons';
-import ReviewForm from './ReviewForm';
+import Modal from '../components/Modal/Modal';
+import { OpenModalIcon } from './Home.styles';
 
 const Home = ({ navigation }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,26 +39,15 @@ const Home = ({ navigation }) => {
   };
 
   return (
-    <View style={GlobalStyles.container}>
-      <Modal visible={isModalOpen} animationType="slide">
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <View style={styles.modalContent}>
-            <MaterialIcons
-              name="close"
-              size={24}
-              onPress={() => setIsModalOpen(false)}
-              style={{ ...styles.openModal, ...styles.closeModal }}
-            />
-            <ReviewForm addReview={addReview} />
-          </View>
-        </TouchableWithoutFeedback>
-      </Modal>
+    <Container>
+      {isModalOpen ? (
+        <Modal setIsModalOpen={setIsModalOpen} addReview={addReview} />
+      ) : null}
 
-      <MaterialIcons
+      <OpenModalIcon
         name="add"
         size={24}
         onPress={() => setIsModalOpen(true)}
-        style={styles.openModal}
       />
 
       <FlatList
@@ -78,26 +62,8 @@ const Home = ({ navigation }) => {
           </TouchableOpacity>
         )}
       />
-    </View>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  modalContent: {
-    flex: 1,
-  },
-  openModal: {
-    alignSelf: 'center',
-    padding: 10,
-    marginBottom: 10,
-    borderWidth: 1,
-    borderColor: '#DAD7D7',
-    borderRadius: 10,
-  },
-  closeModal: {
-    marginTop: 20,
-    marginBottom: 0,
-  },
-});
 
 export default Home;

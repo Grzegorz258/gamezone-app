@@ -1,31 +1,20 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
-export const GlobalStyles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-  },
-  titleText: {
-    fontFamily: 'nunito-bold',
-    fontSize: 18,
-    color: '#333',
-  },
-  paragraph: {
-    marginVertical: 8,
-    lineHeight: 20,
-  },
-  input: {
-    padding: 10,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 6,
-    fontSize: 18,
-  },
-  errorText: {
-    marginTop: 5,
-    marginBottom: 10,
-    color: 'crimson',
-    fontWeight: 'bold',
-    textAlign: 'center'
-  }
-});
+export const Container = styled.View`
+  flex: 1;
+  padding: 20px;
+`;
+
+export const StyledInput = styled.TextInput`
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 18px;
+`;
+
+export const ErrorText = styled.Text`
+  margin: 5px 0 10px 0;
+  color: crimson;
+  font-weight: bold;
+  text-align: center;
+`;

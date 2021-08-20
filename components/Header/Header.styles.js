@@ -1,7 +1,6 @@
-import { Image, Text, View } from 'react-native';
 import styled from 'styled-components/native';
 
-export const Wrapper = styled(View)`
+export const Wrapper = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -9,12 +8,12 @@ export const Wrapper = styled(View)`
   padding: 0;
 `;
 
-export const Title = styled(Text)`
-  font-size: 20;
+export const Title = styled.Text`
+  font-size: 20px;
   font-weight: bold;
 `;
 
-export const StyledImage = styled(Image)`
+export const StyledImage = styled.Image`
   margin: 0 10px;
   height: 26px;
   width: 26px;

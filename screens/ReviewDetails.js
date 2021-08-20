@@ -1,34 +1,26 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
-import { GlobalStyles } from '../styles/GlobalStyles';
+import { Text, Image } from 'react-native';
+import { Container } from '../styles/GlobalStyles';
 import Card from '../components/Card/Card';
 import { images } from '../assets/data/ratingImages';
+import { StyledRating } from './ReviewDetails.styles';
 
 const ReviewDetails = ({ route }) => {
   const { title, body, rating } = route.params;
   return (
-    <View style={GlobalStyles.container}>
+    <Container>
       <Card>
         <Text>{title}</Text>
         <Text>{body}</Text>
-        <View style={styles.rating}>
+        <StyledRating>
           <Text>GameZone rating: </Text>
           <Image source={images.ratings[rating]} />
-        </View>
+        </StyledRating>
       </Card>
-    </View>
+    </Container>
   );
 };
 
-const styles = StyleSheet.create({
-  rating: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 16,
-    paddingTop: 16,
-    borderTopWidth: 1,
-    borderColor: '#eee',
-  },
-});
+
 
 export default ReviewDetails;

@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { GlobalStyles } from '../styles/GlobalStyles';
+import { Text } from 'react-native';
+import { Container } from '../styles/GlobalStyles';
 
 const About = () => {
   return (
-    <View style={GlobalStyles.container}>
+    <Container>
       <Text>About Screen</Text>
-    </View>
+    </Container>
   );
 }
 
