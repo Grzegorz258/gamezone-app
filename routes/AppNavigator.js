@@ -4,38 +4,31 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import HomeStack from './HomeStack';
 import AboutStack from './AboutStack';
+import Header from '../components/Header/Header';
 
 const { Navigator, Screen } = createDrawerNavigator();
 
-const Header = ({ title }) => {
-  return (
-    <View style={{ flexDirection: 'row' }}>
-      <Image
-        source={require('../assets/img/heart_logo.png')}
-        style={{ height: 26, width: 26, marginHorizontal: 10 }}
-      />
-      <Text style={{ fontSize: 20, fontWeight: 'bold' }}> {title}</Text>
-    </View>
-  );
+const headerOptions = {
+  headerBackground: () => (
+    <Image
+      source={require('../assets/img/game_bg.png')}
+      style={{ height: '100%' }}
+    />
+  ),
+  headerTitleAlign: 'center',
 };
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Navigator initialRouteName="Home">
+      <Navigator initialRouteName="HomeInDrawer">
         <Screen
           name="HomeInDrawer"
           component={HomeStack}
           options={{
             title: 'GameZone',
-            headerTitle: () => <Header title="GameZone" />,
-            headerBackground: () => (
-              <Image
-                source={require('../assets/img/game_bg.png')}
-                style={{ height: '100%' }}
-              />
-            ),
-            headerTitleAlign: 'center',
+            headerTitle: () => <Header title="Gamezone" />,
+            ...headerOptions,
           }}
         />
         <Screen
@@ -44,13 +37,7 @@ const AppNavigator = () => {
           options={{
             title: 'About GameZone',
             headerTitle: () => <Header title="About GameZone" />,
-            headerBackground: () => (
-              <Image
-                source={require('../assets/img/game_bg.png')}
-                style={{ height: '100%' }}
-              />
-            ),
-            headerTitleAlign: 'center',
+            ...headerOptions,
           }}
         />
       </Navigator>

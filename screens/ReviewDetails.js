@@ -4,7 +4,7 @@ import { GlobalStyles } from '../styles/GlobalStyles';
 import Card from '../components/Card/Card';
 import { images } from '../assets/data/ratingImages';
 
-const ReviewDetails = ({ navigation, route }) => {
+const ReviewDetails = ({ route }) => {
   const { title, body, rating } = route.params;
   return (
     <View style={GlobalStyles.container}>
